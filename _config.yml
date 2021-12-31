@@ -122,10 +122,13 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/sffornasari"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
+    - label: "SeisRaM"
+      icon: "fas fa-briefcase"
+      url: "https://seisram.units.it"
 
 # Site Footer
 footer:
@@ -138,7 +141,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/sffornasari"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -148,6 +151,9 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "SeisRaM"
+      icon: "fas fa-briefcase"
+      url: "https://seisram.units.it"
 
 
 # Reading Files
