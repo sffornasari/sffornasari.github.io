@@ -1,5 +1,7 @@
 ---
 title: "Nasa Space App Challenge 2021"
+share: false
+related: false
 categories:
   - Others
 tags:
