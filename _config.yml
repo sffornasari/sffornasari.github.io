@@ -129,6 +129,12 @@ author:
     - label: "SeisRaM"
       icon: "fas fa-briefcase"
       url: "https://seisram.units.it"
+    - label: "ORCID"
+      icon: "fab fa-orcid"
+      url: "https://orcid.org/0000-0001-8855-4478"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "www.linkedin.com/in/simone-francesco-fornasari"
 
 # Site Footer
 footer:
@@ -154,6 +160,12 @@ footer:
     - label: "SeisRaM"
       icon: "fas fa-briefcase"
       url: "https://seisram.units.it"
+    - label: "ORCID"
+      icon: "fab fa-orcid"
+      url: "https://orcid.org/0000-0001-8855-4478"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "www.linkedin.com/in/simone-francesco-fornasari"
 
 
 # Reading Files
