@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 {% include group-by-array collection=site.posts field='categories' %}
-<ul>
+<div>
   {% for tag in group_names %}
     {% if tag == 'Others' %}
       {% assign posts = group_items[forloop.index0] %}
@@ -22,5 +22,5 @@ author_profile: true
       </li>
     {% endif %}
   {% endfor %}
-</ul>
+</div>
 
