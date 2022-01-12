@@ -1,14 +1,14 @@
 ---
-layout: page
-title: Other
-permalink: /other
+layout: archive
+title: Others
+permalink: /Others
 ---
 
 {% include group-by-array collection=site.posts field='categories' %}
 
 <ul>
   {% for tag in group_names %}
-    {% if tag == 'other' %}
+    {% if tag == 'Others' %}
       {% assign posts = group_items[forloop.index0] %}
       <li>
         <h2>{{ tag }}</h2>
