@@ -4,7 +4,7 @@ title: Other
 permalink: /other
 ---
 
-{% include ../_includes/group-by-array collection=site.posts field='categories' %}
+{% include group-by-array collection=site.posts field='categories' %}
 
 <ul>
   {% for tag in group_names %}
