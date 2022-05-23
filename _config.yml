@@ -106,7 +106,7 @@ author:
   avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "PhD student in seismology at the SeiRaM group of University of Trieste."
   location         : "Trieste, Italy"
-  email            :
+  email            : "simonefrancesco.fornasari@phd.units.it"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
