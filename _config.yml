@@ -108,7 +108,7 @@ author:
   location         : "Trieste, Italy"
   email            : "simonefrancesco.fornasari@phd.units.it"
   links:
-    - label: "Email"
+    - label: "simonefrancesco.fornasari@phd.units.it"
       icon: "fas fa-fw fa-envelope-square"
       # url: "mailto:your.name@email.com"
     - label: "Website"
