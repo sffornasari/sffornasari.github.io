@@ -110,7 +110,7 @@ author:
   links:
     - label: "simonefrancesco.fornasari@phd.units.it"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:simonefrancesco.fornasari@phd.units.it"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
