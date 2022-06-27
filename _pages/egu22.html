@@ -1,0 +1,265 @@
+---
+permalink: /egu22/
+author_profile: true
+layout: full
+---
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Strong-motion monitoring, optimization of location techniques and definition of seismic parameters for the Italian territory</title>
+
+		<meta name="author" content="Simone Francesco Fornasari">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/assets/dist/reset.css">
+		<link rel="stylesheet" href="/assets/dist/reveal.css">
+		<link rel="stylesheet" href="/assets/dist/theme/sansserif.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="/assets/plugin/highlight/monokai.css">
+	</head>
+	
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<div style="width:75%; float:left">
+						<h1 style="font-size:1.2em; text-align: left; padding-top: 10%; width:55% float: left">A machine-learning approach for the reconstruction of the ground shaking fields in real-time</h1>
+						<p style="font-size:0.9em; text-align:left">Simone Francesco Fornasari<br>Veronica Pazzi<br>Giovanni Costa</p>
+					</div>
+					<div style="width:25%; float:right">
+						<img src="/assets/img/egu_claim_blue.svg" style="float: center; padding-top:20%">
+						<img src="/assets/img/logo_units.png" style="float: center; width:100%; padding-top:2%">
+						<img src="/assets/img/seisram.png" style="float: center; width:70%; padding-top:2%">
+					</div>
+ 					<aside class="notes">
+   					 	Hi, I'm Simone from the SeisRaM working group of the university of Trieste.
+						Together with Veronica Pazzi and Giovanni Costa we developed a method to reconstruct ground shaking maps in real-time using machine learning.
+  					</aside>
+				</section>
+			
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2>Ground shaking field</h2>
+					<ul>
+						<li>Spatial representation of the effects of an earthquake in terms of a ground motion parameter</li>
+						<li>Post-emergency management</li>
+						<li>Limited number of seismic stations</li>
+					</ul>
+					<img src="/assets/img/groundshaking.png" width="60%">
+					<aside class="notes">
+						Ground shaking maps provide a spatial representation of the effects of an earthquake in terms of ground motion parameters: even though they have been used to a wide spectrum of applications, their main purpose is related to post-emergency management.
+						Traditional algorithms, such as ShakeMap, generate these maps from a limited number of observations and using ground motion prediction equations.
+						One of the limitations of this approach is that it needs information about the magnitude and location of the event: to give an example these parameters are available to the Italian Civil Protection on average 12 minutes after the event.
+						On the other hand the data from the stations are available at the computational center a few seconds after being recorded.
+						We then tried to address this temporal gap of information developing an algorithm able to reconstruct the shaking maps in real-time exploiting the data from the stations alone.
+					</aside>
+				</section>
+					
+
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2 style="line-height:0.5em">Implemented workflow<br><span style="font-size:0.4em;">(Model architecture adapted from Fukami et al., 2020)</span></h2>
+					<img src="/assets/img/workflow.png" width="100%">
+					<div style="width:50%; float: left" class="fragment">
+						<h3 style="font-size:0.6em;">Convolutional Neural Network</h2>
+						<img src="/assets/img/Convolution_schematic.gif" width="40%" style="margin:1%">
+					</div>
+					<div style="width:50%; float: right" class="fragment">
+						<h3 style="font-size:0.6em;">Voronoi tessellation</h2>
+						<img src="/assets/img/voronoi.png" width="80%" style="margin:4%">
+					</div>
+					<aside class="notes">
+						To do so we adopted a machine learning approach: our final model consists of an ensemble of 5 CNNs [NEXT], each one with the same architecture but trained independently on different dataset developed from the INGV ShakeMap archive.
+						The data from the stations are retrieved from a monitoring system, such as Antelope, and preprocessed to extract a ground motion parameter at the station [NEXT]: since CNN cannot handle sparse data, we introduced a Voronoi tessellation of the station data to extend the information recorded at one station to all its nearest neighbours.
+						A map of the active stations is used to introduce the information about the geometry of the network, and a Vs30 map is used as a proxy for the site effects.
+						Each member of the ensemble output a reconstruction of the shaking map which is used to compute the outputs of the ensemble that are an average shaking map and its associated uncertainty.
+					</aside>
+				</section>
+	
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2 style="line-height:0.5em">Output comparison<br><span style="font-size:0.5em;">(2016 M6.5 Norcia earthquake)</span></h2>
+					<img src="/assets/img/comparison.png" width="60%" >
+					<aside class="notes">
+						The outputs of our model can be compared with the one obtained with traditional methods but have a lower resolution.
+						Here you can see the results obtained for the 2016 Norcia earthquake and how they overall agree.
+					</aside>
+				</section>
+				
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2>Simultaneous events</h2>
+					<img src="/assets/img/multievent_n.png" width="80%" >
+					<aside class="notes">
+						Since evaluating peak ground motion parameters in real-time means working with moving time window, it is important for our model to be able to reconstruct the joint shaking maps for events happening in the same window.
+						We simulated different scenarios with events of similar and different magnitude: on the left you can see the superposition of the shakemaps computed independently; on the right are shown the reconstructions obtained with our model using as input the superposition of the station data for the multiple events.
+						These results are possible thanks to the architecture adopted that reconstructs the shaking field as a local process.
+					</aside>
+				</section>
+				
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 style="font-size:0.8em;">
+					<h2>Robustness to network changes</h2>
+					<div style="width:50%; float: left">
+						<p>Possible causes:</p>
+						<ul>
+							<li>Data transmission problems</li>
+							<li>Addition/Removal of stations</li>
+							<li>Temporary problems</li>
+						</ul>
+					</div>
+					<div style="width:50%; float: right">
+						<img src="/assets/img/pga_geom.png" width="100%">
+					</div>
+					<aside class="notes">
+						Another important aspect for real-time monitoring is the robustness of the model to network changes that could be linked to different causes.
+						The proposed model shows good robustness to network geometry changes both in terms of the number of stations available and their distribution.
+						Furthermore, testing both trained and untrained station postions we can notice how the network geometry plays a bigger role than the previous knowledge of the position of the stations.
+					</aside>
+				</section>
+				
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2 style="line-height:0.5em">Real-time capabilities<br><span style="font-size:0.5em;">(2016 M6.5 Norcia earthquake)</span></h2>
+					<video muted data-autoplay controls style="float:center" width='80%'>
+						<source src="/assets/img/norcia_EGU.webm">
+					</video>
+					<aside class="notes">
+						Finally I want to show you the real-time capabilities of the model.
+						Here we tested the reconstruction of the model once again for the 2016 Norcia earthquake.
+						The time indicated shows the time elapsed since the event: as you can see, using the data within 15 to 30 seconds after the event we can reconstruct the ground shaking map for the epicentral area, and using the data available 1 minute after the event we have an almost complete reconstruction of the shaking map for the event.
+					</aside>
+				</section>
+
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 style="font-size:0.8em;" data-auto-animate>
+					<h2>Conclusions</h2>
+					<div style="float:left;">
+					<p style="float:left; margin:0%4%">The developed method:</p>
+					<ul style="float:left;">
+						<li>Can fill a "temporal gap" in the seismic monitoring</li>
+						<li>Has results comparable with <span style="font-size:1em;">(resampled)</span> ShakeMap</li>
+						<li>Has useful feature for real-time applications</li>
+						<li>Is extensible (parameters and areas)</li>
+					</ul>
+					</div>
+					<div style="float:center; padding:0%4%">
+						<u style="font-size:1em; float:center; margin:0%4%" class='fragment' data-fragment-index="1">A paper about this work is under review at BSSA</u>
+						<b style="font-size:1.5em; float:center; margin:0%0%" class='fragment' data-fragment-index="2">Thanks for the attention and stay tuned!</b>
+					</div>
+					<aside class="notes">
+						So the model that we developed provide a new tool for seismic monitoring that is complementary to the existing ones and has useful features for real-time applications.
+						Furthermore it could be extended to virtually any ground motion parameter and to different geographical areas.[NEXT]
+						If you're interested, a paper about this method is currently under review at BSSA,[NEXT] so stay tuned and thank you for the attention.
+					</aside>
+				</section>
+				
+				
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 style="font-size:0.8em;" data-auto-animate data-visibility="uncounted">
+					<h2>Conclusions</h2>
+					<div style="float:left;">
+					<p style="float:left; margin:0%4%">The developed method:</p>
+					<ul style="float:left;">
+						<li>Can fill a "temporal gap" in the seismic monitoring</li>
+						<li>Has results comparable with <span style="font-size:1em;">(resampled)</span> ShakeMap</li>
+						<li>Has useful feature for real-time applications</li>
+						<li>Is extensible (parameters and areas)</li>
+					</ul>
+					</div>
+					<div style="float:center; padding:0%4%">
+						<u style="font-size:1em; float:center; margin:0%4%">A paper about this work is under review at BSSA</u>
+						<b style="font-size:1.5em; float:center; margin:0%0%">Thanks for the attention and stay tuned!</b>
+					</div>
+					<aside class="notes">
+						So the model that we developed provide a new tool for seismic monitoring that is complementary to the existing ones and has useful features for real-time applications.
+						Furthermore it could be extended to virtually any ground motion parameter and to different geographical areas.[NEXT]
+						If you're interested, a paper about this method is currently under review at BSSA,[NEXT] so stay tuned and thank you for the attention.
+					</aside>
+				</section>
+	
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 data-visibility="uncounted"><h1>Supplementary material</h1></section>
+				
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 data-auto-animate data-visibility="uncounted">
+					<h2>Applied Architecture</h2>
+					<img src="/assets/img/ensemble_m.png" width="40%"  style="padding-top: 5%; float: right; filter: invert(1);">
+					<ul style="width: 55%;">
+						<li>Based on Fukami et al. (2020)</li>
+						<li>Input:</li>
+						<ul>
+							<li>Voronoi tessellation</li>
+							<li>Station position map</li>
+							<li>Vs30 map</li>
+						</ul>
+						<li>Architecture:</li>
+						<ul>
+							<li>5 models ensemble</li>
+							<li>4 layers per model</li>
+							<li>12 5x5 filters per layer</li>
+						</ul>
+					</ul>
+				</section>
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 data-visibility="uncounted">
+					<h2>Training details</h2>
+					<ul>
+						<li>Optimizer used: Adam</li>
+						<li>Training dataset: 90% training and 10% validation (10-fold validation)</li>
+						<li>500 epochs limit (or early stopping on validation loss)</li>
+						<li>Loss function: <span style="font-size: 0.82em;">$L = \frac{||\tilde{s}-s||_2}{||s||_2}$</span></li>
+						<li>48-sample batches used</li>
+					</ul>
+				</section>
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2 data-visibility="uncounted">
+					<h2>Reconstruction uncertainty:</h2>
+					<span style="font-size:0.82em;">$$ \sigma = \sqrt{\sigma_{a}^2+\sigma_{e}^2}$$</span>
+					<span style="font-size:0.82em;">$$\sigma_a = \mu\sqrt{e^{\ln(10)^2\sigma_{G}^2}-1}, \qquad \sigma_e=\sqrt{\frac{1}{m}\sum_{i=0}^m\mu_i^2 - \left(\frac{1}{m}\sum_{i=0}^m\mu_i\right)^2}$$</span>
+				</section>
+				<section data-background-image="/assets/img/Zagreb.png" data-background-opacity=0.2>
+					<h2 style="font-size:0.9em;">Norcia earthquake ShakeMap</h2>
+					<img src="/assets/img/norcia_ingv.jpg" width="50%">
+				</section>				
+			</div>
+		</div>
+
+
+		<script src="/assets/dist/reveal.js"></script>
+		<script src="/assets/plugin/zoom/zoom.js"></script>
+		<script src="/assets/plugin/notes/notes.js"></script>
+		<script src="/assets/plugin/search/search.js"></script>
+		<script src="/assets/plugin/markdown/markdown.js"></script>
+		<script src="/assets/plugin/highlight/highlight.js"></script>
+        <script src="/assets/plugin/pointer/mouse-pointer.js", async=true></script>
+		<script src="/assets/plugin/math/math.js"></script>
+		
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true,
+				transition: 'slide',
+				showNotes: false,
+				pdfSeparateFragments: false,
+				katex: {
+					version: 'latest',
+					delimiters: [
+						{left: '$$', right: '$$', display: true},
+						{left: '$', right: '$', display: false},
+						{left: '\\(', right: '\\)', display: false},
+						{left: '\\[', right: '\\]', display: true}
+					],
+					ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+				},
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown,  RevealMath.KaTeX , RevealHighlight]
+				});
+
+		</script>
+
+	</body>
+</html>

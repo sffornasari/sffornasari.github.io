@@ -103,7 +103,7 @@ analytics:
 # Site Author
 author:
   name             : "Simone Francesco Fornasari"
-  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/img/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "PhD student in seismology at the SeiRaM group of University of Trieste."
   location         : "Trieste, Italy"
   email            : 
@@ -175,6 +175,19 @@ footer:
 include:
   - .htaccess
   - _pages
+include: ["_pages"]
+
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+permalink: /egu22/
+
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
