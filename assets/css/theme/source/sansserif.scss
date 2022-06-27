@@ -1,0 +1,46 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is brown.
+ *
+ * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Include theme-specific fonts
+@import url(./fonts/source-sans-pro/source-sans-pro.css);
+
+// Override theme settings (see ../template/settings.scss)
+
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$mainFontSize: 42px;
+$mainColor: #000;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFontWeight: 600;
+$headingColor: #383D3D;
+$headingLetterSpacing: normal;
+$headingTextShadow: none;
+$headingTextTransform: uppercase;
+$backgroundColor: #F0F1EB;
+$linkColor: #51483D;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: #26351C;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
