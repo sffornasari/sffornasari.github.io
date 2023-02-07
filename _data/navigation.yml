@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Presentations and posters"
+    url: /presentations/
   - title: "Publications"
     url: /publications/
   # - title: "About"
