@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "CV"
+    url: /assets/sffornasari_cv.pdf
   - title: "Presentations and posters"
     url: /presentations/
   - title: "Publications"
