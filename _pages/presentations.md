@@ -7,7 +7,7 @@ author_profile: true
 ---
 
 # 2023
-* **EGU23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Development of an hybrid GMPE-less ShakeMap implementation for real-time ground shaking  maps reconstruction*
+* **EGU23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Development of an hybrid GMPE-less ShakeMap implementation for real-time ground shaking  maps reconstruction* | [abstract](https://meetingorganizer.copernicus.org/EGU23/EGU23-15719.html)
 * **SSA23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Real-Time Ground Shaking Maps Reconstructions With a Hybrid ShakeMap Implementation*
 * **GNGTS23** and **AGLC 23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Real-time ground-shaking maps reconstruction of late 2022 Italian earthquakes* | [video](https://youtu.be/uXOC122CHHM) | [post](https://sffornasari.github.io/work/GNGTS23/)
 
