@@ -6,7 +6,7 @@ permalink: /publications/
 author_profile: true
 ---
 # 2023
-* **Simone Francesco Fornasari**, Deniz Ertuncay, Giovanni Costa; Seismic background noise levels in the Italian strong-motion network. *Natural Hazards and Earth System Sciences* 2023, 23.10: 3219-3234. doi: [nhess-23-3219-2023](https://doi.org/10.5194/nhess-23-3219-2023)
+* **Simone Francesco Fornasari**, Deniz Ertuncay, Giovanni Costa; Seismic background noise levels in the Italian strong-motion network. *Natural Hazards and Earth System Sciences* 2023, 23.10: 3219-3234. doi: [10.5194/nhess-23-3219-2023](https://doi.org/10.5194/nhess-23-3219-2023)
 
 # 2022
 
