@@ -7,6 +7,7 @@ author_profile: true
 ---
 
 # 2023
+* **BeGEO23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Toward a general hybrid ground shaking map reconstruction method* | [poster](https://sffornasari.github.io/assets/img/BeGEO2023_poster.png)
 * **AUG23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *The road to real time ground shaking maps is paved with ORB packages* |
 * **EGU23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Development of an hybrid GMPE-less ShakeMap implementation for real-time ground shaking  maps reconstruction* | [abstract](https://meetingorganizer.copernicus.org/EGU23/EGU23-15719.html)
 * **SSA23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Real-Time Ground Shaking Maps Reconstructions With a Hybrid ShakeMap Implementation* |
