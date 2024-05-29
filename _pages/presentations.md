@@ -5,6 +5,8 @@ classes: wide
 permalink: /presentations/
 author_profile: true
 ---
+# 2024
+* **GNGTS24** and **AGLC 24**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Development of a hybrid method for ground shaking map reconstruction in near-real time* | 
 
 # 2023
 * **BeGEO23**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Toward a general hybrid ground shaking map reconstruction method* | [poster](https://sffornasari.github.io/assets/img/BeGEO2023_poster.png)
