@@ -6,6 +6,7 @@ permalink: /presentations/
 author_profile: true
 ---
 # 2024
+* **AUG24**: Simone Francesco Fornasari, *Real-time ground shaking maps with Antelope and ML* | [slides](https://sffornasari.github.io/presentations/aug24/)
 * **GNGTS24** and **AGLC 24**: Simone Francesco Fornasari, Veronica Pazzi, Giovanni Costa, *Development of a hybrid method for ground shaking map reconstruction in near-real time* | 
 
 # 2023
