@@ -1,0 +1,178 @@
+---
+permalink: /presentations/aug24/
+author_profile: true
+layout: full
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+
+		<title>Real-time ground shaking maps with Antelope and ML</title>
+
+		<meta name="description" content="Real-time ground shaking maps with Antelope and ML">
+		<meta name="author" content="Simone Francesco Fornasari">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/sansserif.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="img/title_bgC.png">
+					<h1 style="color:black; text-align: left; width: 40%;">Real-time ground shaking maps with Antelope and ML</h1>
+
+					<p>Simone Francesco Fornasari - University of Trieste</p>
+					<p>Antelope User Group 2024 - Trieste</p>
+				</section>
+				
+				<section>
+					<h1>Background context</h1>
+					<p>Ground shaking maps have been used in a variety of scenarios, from emergency response to portfolio risk assessment.<br>
+					Interpolation algorithms (e.g. ShakeMap) use data recorded at the stations and the event magnitude and localization estimates.<br>
+					The core idea of the project is to quickly provide preliminary information useful for Civil Defence purposes without the need for localization.<br>
+					<p style="color: orangered">Can we reconstruct ground shaking maps exploiting only real time data?</p>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h1>ShakeRec-hybrid</h1>
+						<div style="width: 60%; float: left;">
+						<p>
+						ShakeRec-hybrid combines a neural network (called <a style="color:orangered">ConvCNP</a>) with MVN.<br>
+						The workflow is quite simple:
+						</p>
+						<ul>
+							<li>The GMP recorded at the stations are corrected for soil effects</li>
+							<li style="color:orangered">The corrected GMP are encoded on a regular grid</li>
+							<li style="color:orangered">The encoded grid is passed to a neural network</li>
+							<li style="color:orangered">The neural network output is decoded at arbitrary points</li>
+							<li>Site effects are reintroduced</li>
+							<li>The recorded GMP and the obtained output are passed to the MVN</li>
+						</ul>
+						<p>The <a style="color: orangered;">ConvCNP</a> acts as a GMPE replacement without the need for the event location and magnitude.</p>
+						</div>
+						<div style="width: 35%; float: right;">
+							<img data-src="img/hybrid_orange.png">
+						</div>
+					</section>
+					<section>
+						<h1>Training datasets</h1>
+						<div style="width: 70%; float: left;">
+							<img data-src="img/SRh_db.png">
+							<p>INGV ShakeMap archive and DISS-based synthetic data</p>
+						</div>
+						<div style="width: 25%; float: left;">
+							<img data-src="img/AF.jpg">
+							<p>(Mori et al., 2021)</p>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h1>Connecting with Antelope</h1>
+					<p>A custom library has been developed to read packet from the ORB and extract the ground motion parameters in real time.<br>
+					To ensure good performance (in Python?!):</p>
+					<ul>
+						<li>The stations are subdivided in <a style="color:orangered">multiple processes</a></li>
+						<li>Date reading, pre-processing, and processing are performed on <a style="color:orangered">multiple threads</a></li>
+						<li>Minimal data are shared among processes</li>
+						<li>ShakeRec-hybrid works on trigger</li>
+						<li>The outputs are temporarly stored in a <a style="color:orangered">Redis</a> (in-memory) database</li>
+						⟶ Replace with Antelope ORB?
+						<li>The final outputs are saved in JSON files whose path are stored in a <a style="color:orangered">SQL</a> database</li>
+						⟶ Replace with Antelope database?
+					</ul>
+				</section>
+
+				<section>
+					<h1 style="color: orangered;">DISCLAIMER</h1>
+					The implementation is ongoing!
+				</section>
+
+				<section>
+					<section>
+						<h1>Data visualization</h1>
+						<img data-src="img/leaflet.png">
+					</section>
+					<section>
+						<h1>Live visualization</h1>
+						<iframe data-src="http://localhost:8080/plot_latest" data-preload width="1280" height="720"></iframe>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Past events info</h1>
+						<img data-src="img/evlist.png">
+					</section>
+					<section>
+						<h1>Live past events info</h1>
+						<iframe data-src="http://localhost:8080/get_events" data-preload width="1280" height="720" style="background-color: white;"></iframe>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Web service</h1>
+						<img data-src="img/webservice.png">
+					</section>
+					<section>
+						<h1>Live web service</h1>
+						<iframe data-src="http://localhost:8080/docs" data-preload width="1280" height="720"></iframe>
+					</section>
+				</section>
+
+				<section>
+					<h1>Open questions</h1>
+					<ul>
+						<li>How to decide when to save the results?</li>
+						<li>How to associate the maps to the actual event?</li>
+						<li>How to properly frame the reconstruction (i.e. make the maps stay put)?</li>
+						<li>How to store the data?</li>
+					</ul>
+				</section>
+
+
+				<section data-background-image="img/title_bgC.png">
+					<h1 style="color:black; text-align: left; width: 40%;">Thanks for your attention!</h1>
+
+					<p style="color: orangered;">simonefrancesco.fornasari@phd.units.it</p>
+				</section>
+				
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				width: 1920,
+  				height: 1080,
+				margin: 0.1,
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes]
+			});
+		</script>
+	</body>
+</html>
