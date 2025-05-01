@@ -104,13 +104,13 @@ analytics:
 author:
   name             : "Simone Francesco Fornasari"
   avatar           : "/assets/img/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "PhD student in seismology at the SeiRaM group of University of Trieste."
+  bio              : "PostDoc in seismology at the SeiRaM group of University of Trieste."
   location         : "Trieste, Italy"
   email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:simonefrancesco.fornasari@phd.units.it"
+      url: "mailto:simonefrancesco.fornasari@units.it"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -144,7 +144,7 @@ footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:simonefrancesco.fornasari@phd.units.it"
+      url: "mailto:simonefrancesco.fornasari@units.it"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url:
