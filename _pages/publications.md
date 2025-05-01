@@ -6,7 +6,7 @@ permalink: /publications/
 author_profile: true
 ---
 # 2025
-* **Simone Francesco Fornasari**, Deniz Ertuncay, Giovanni Costa; Effect of the COVID-19 lockdown on background noise levels in Italian strong motion network. *Frontiers in Earth Science - Section Solid Earth Geophysics* 2025, vol. 12 - 2024. doi: [10.3389/feart.2024.1507241](https://doi.org/10.3389/feart.2024.1507241)
+* Deniz Ertuncay, **Simone Francesco Fornasari**, Giovanni Costa; Effect of the COVID-19 lockdown on background noise levels in Italian strong motion network. *Frontiers in Earth Science - Section Solid Earth Geophysics* 2025, vol. 12 - 2024. doi: [10.3389/feart.2024.1507241](https://doi.org/10.3389/feart.2024.1507241)
 
 # 2024
 * **Simone Francesco Fornasari**, Veronica Pazzi, Giovanni Costa; Neural‐Network and Multivariate‐Normal‐Distribution Hybrid Method for Real‐Time Ground‐Shaking Reconstruction. *Bulletin of the Seismological Society of America* 2024; doi: [10.1785/0120240095](https://doi.org/10.1785/0120240095)
