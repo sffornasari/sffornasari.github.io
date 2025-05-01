@@ -6,7 +6,7 @@ permalink: /presentations/
 author_profile: true
 ---
 # 2025
-* **EGU23**: Simone Francesco Fornasari and Giovanni Costa, *Site response function evaluation at Campi Flegrei accelerometric stations* | [abstract](https://meetingorganizer.copernicus.org/EGU25/EGU25-11427.html)
+* **EGU25**: Simone Francesco Fornasari and Giovanni Costa, *Site response function evaluation at Campi Flegrei accelerometric stations* | [abstract](https://meetingorganizer.copernicus.org/EGU25/EGU25-11427.html)
 * **GNGTS25**: Simone Francesco Fornasari and Giovanni Costa, *Estimation of the site response function for accelerometric stations within Campi Flegrei* | 
 
 # 2024
