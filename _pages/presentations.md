@@ -5,6 +5,13 @@ classes: wide
 permalink: /presentations/
 author_profile: true
 ---
+# 2026
+* **EGU26**: Simone Francesco Fornasari and Giovanni Costa, *A Feasibility Study of Earthquake Early Warning at the NITRO Near-Fault Observatory* | [abstract](https://meetingorganizer.copernicus.org/EGU26/EGU26-12472.html)
+* **EPOS Days 2026**: Simone Francesco Fornasari and Giovanni Costa, *Evaluating NITRO’s EEWS readiness* |
+* **GNGTS25**: Veronica Pazzi, Simone Francesco Fornasari, Stefano Devoto, Giovanni Costa, and Emanuele Forte, *An eigenfrequency abacus for rapid estimation of block volumes from seismic noise
+measurements* | 
+* **GNGTS25** and **AGLC 26**: Simone Francesco Fornasari and Giovanni Costa, *Assessing Earthquake Early Warning Feasibility at the NITRO Near-Fault Observatory* | 
+
 # 2025
 * **EGU25**: Simone Francesco Fornasari and Giovanni Costa, *Site response function evaluation at Campi Flegrei accelerometric stations* | [abstract](https://meetingorganizer.copernicus.org/EGU25/EGU25-11427.html)
 * **GNGTS25**: Simone Francesco Fornasari and Giovanni Costa, *Estimation of the site response function for accelerometric stations within Campi Flegrei* | 
