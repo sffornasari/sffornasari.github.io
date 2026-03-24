@@ -6,6 +6,8 @@ permalink: /publications/
 author_profile: true
 ---
 # 2025
+* Veronica Pazzi, **Simone Francesco Fornasari**, Stefano Devoto, Giovanni Costa, Emanuele Forte; Fast Estimation of Landslide Blocks’ Volume from Seismic Noise Measurements. *Communications Earth & Environment* 2025. doi: [10.1038/s43247-025-02999-3](https://doi.org/10.1038/s43247-025-02999-3)
+* Deniz Ertuncay, Pinar Buyukakpinar, **Simone Francesco Fornasari**, Onur Tan. 23 April 2025 Marmara Sea (Mw 6.3), Türkiye Earthquake: Mainshock, Aftershock, and Ground Observations». In: *Seismica*, 2025. doi: [10.26443/seismica.v4i2.1773](https://doi.org/10.26443/seismica.v4i2.1773)
 * Deniz Ertuncay, **Simone Francesco Fornasari**, Giovanni Costa; Effect of the COVID-19 lockdown on background noise levels in Italian strong motion network. *Frontiers in Earth Science - Section Solid Earth Geophysics* 2025, vol. 12 - 2024. doi: [10.3389/feart.2024.1507241](https://doi.org/10.3389/feart.2024.1507241)
 
 # 2024
