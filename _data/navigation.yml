@@ -1,9 +1,9 @@
 main:
   - title: "CV"
-    url: "/cv/"
+    url: "/#cv"
   - title: "Publications"
-    url: "/publications/"
+    url: "/#publications"
   - title: "Presentations"
-    url: "/presentations/"
+    url: "/#presentations"
   - title: "Outreach"
-    url: "/outreach/"
+    url: "/#outreach"

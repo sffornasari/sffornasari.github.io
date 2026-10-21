@@ -16,3 +16,19 @@ I work on real-time seismic monitoring and earthquake hazard assessment: earthqu
 <a href="https://scholar.google.com/citations?user=7x-PgKsAAAAJ">Google Scholar</a>
 <a href="https://orcid.org/0000-0001-8855-4478">ORCID</a>
 </p>
+
+## CV {#cv}
+
+{% include sections/cv.md %}
+
+## Publications {#publications}
+
+{% include sections/publications.md %}
+
+## Presentations {#presentations}
+
+{% include sections/presentations.md %}
+
+## Outreach {#outreach}
+
+{% include sections/outreach.md %}
